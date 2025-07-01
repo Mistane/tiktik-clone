@@ -7,6 +7,7 @@ import {useState, useEffect} from "react";
 
 import {Wrapper as PopperWrapper} from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
+import Button from "~/components/Button";
 
 const cx = classNames.bind(styles);
 
@@ -34,13 +35,11 @@ function Header() {
           render={(attrs) => (
             <div className={cx("search-result")} tabIndex="-1" {...attrs}>
               <PopperWrapper>
-                <h4 className={cx("search-title")}>
-                  Shinonome Ena
-                </h4>
-                <AccountItem/>
-                <AccountItem/>
-                <AccountItem/>
-                <AccountItem/>
+                <h4 className={cx("search-title")}>Shinonome Ena</h4>
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
               </PopperWrapper>
             </div>
           )}
@@ -53,7 +52,10 @@ function Header() {
             <button className={cx("search-btn")}>O</button>
           </div>
         </Tippy>
-        <div className={cx("actions")}></div>
+        <div className={cx("actions")}>
+          <Button text>Upload</Button>
+          <Button primary>Log in</Button>
+        </div>
       </div>
     </header>
   );
